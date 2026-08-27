@@ -1,0 +1,34 @@
+Parte 1: Como configurar o Banco de Dados no XAMPP
+
+pesquise ou baixe o XAMPP Control Panel e abra o programa.
+
+Na linha do Apache, clique no botão Start.
+
+Na linha do MySQL, clique no botão Start.
+
+Assim que o MySQL ficar com o fundo verde, clique no botão Admin (na mesma linha do MySQL). Isso vai abrir o phpMyAdmin no navegador.
+
+No menu esquerdo do navegador, clique em Novo (New).
+
+No campo "Nome do banco de dados", digite exatamente: ecodrive_db e clique em Criar.
+
+Com o banco selecionado, clique na aba SQL (no menu superior da tela).
+
+Abra o seu arquivo script.sql (ou abra o relatório), copie as linhas de comando da tabela, cole na caixa branca do navegador e clique no botão Executar (Go) lá embaixo:
+
+CREATE TABLE IF NOT EXISTS veiculos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    marca VARCHAR(100) NOT NULL,
+    modelo VARCHAR(100) NOT NULL,
+    placa VARCHAR(20) NOT NULL UNIQUE,
+    ano INT NOT NULL,
+    quilometragem INT NOT NULL
+);
+
+Parte 2: Abrir e Rodar o Sistema no VS Code
+1. Abra o VS Code
+2. No menu superior, clique em **File > Open Folder** (Arquivo > Abrir Pasta).
+3. Selecione a pasta ecodrive a que tem código e o `.jar` juntos e clique em abrir.
+4. No menu superior do VS Code, clique em Terminal > New Terminal. 
+5. cole o seguinte comando exato: 
+java -cp "mysql-connector-j-9.7.0.jar;." EcoDriveApp.java
